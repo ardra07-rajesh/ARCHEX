@@ -1,0 +1,649 @@
+{
+  "project": "ARCHEX — AI Microarchitecture Security & Research Command Centre",
+  "report_title": "Phase 9 CPU report evidence — Research Report",
+  "experiment": {
+    "id": "18d6e439-1ba4-4200-870c-bfc37da8f2ba",
+    "name": "Phase 9 CPU report evidence",
+    "description": "Validate a small CPU pipeline workload.",
+    "category": "cpu",
+    "simulation": "cpu",
+    "status": "completed",
+    "version": 1,
+    "created_at": "2026-11-10T15:54:46.887859+00:00",
+    "updated_at": "2026-11-10T15:54:46.901052+00:00",
+    "configuration": {
+      "program": "ADDI R1, R0, 9\nHALT",
+      "num_registers": 8,
+      "forwarding": true,
+      "max_cycles": 2000,
+      "memory_size_words": 256,
+      "clock_mhz": 100
+    },
+    "notes": "",
+    "tags": [
+      "report-test"
+    ],
+    "result": {
+      "data_source": "simulated",
+      "deterministic": true,
+      "status": "halted",
+      "fault": null,
+      "config": {
+        "num_registers": 8,
+        "forwarding": true,
+        "max_cycles": 2000,
+        "memory_size_words": 256,
+        "clock_mhz": 100
+      },
+      "instructions": [
+        {
+          "index": 0,
+          "text": "ADDI R1, R0, 9",
+          "line": 1
+        },
+        {
+          "index": 1,
+          "text": "HALT",
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "cycles": 6,
+        "instructions_retired": 2,
+        "cpi": 3.0,
+        "ideal_cycles": 6,
+        "stall_cycles": 0,
+        "flush_events": 0,
+        "flushed_instructions": 0,
+        "forwarding_events": 0,
+        "branches": 0,
+        "branches_taken": 0,
+        "execution_time_us": 0.06
+      },
+      "cycles": [
+        {
+          "cycle": 1,
+          "pc": 1,
+          "stages": {
+            "IF": {
+              "id": "I1",
+              "pc": 0,
+              "text": "ADDI R1, R0, 9",
+              "killed": false,
+              "stalled": false
+            },
+            "ID": null,
+            "EX": null,
+            "MEM": null,
+            "WB": null
+          },
+          "events": [],
+          "reg_changes": [],
+          "alu": null,
+          "mem_access": null,
+          "registers": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cycle": 2,
+          "pc": 2,
+          "stages": {
+            "IF": {
+              "id": "I2",
+              "pc": 1,
+              "text": "HALT",
+              "killed": false,
+              "stalled": false
+            },
+            "ID": {
+              "id": "I1",
+              "pc": 0,
+              "text": "ADDI R1, R0, 9",
+              "killed": false,
+              "stalled": false
+            },
+            "EX": null,
+            "MEM": null,
+            "WB": null
+          },
+          "events": [],
+          "reg_changes": [],
+          "alu": null,
+          "mem_access": null,
+          "registers": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cycle": 3,
+          "pc": 2,
+          "stages": {
+            "IF": null,
+            "ID": {
+              "id": "I2",
+              "pc": 1,
+              "text": "HALT",
+              "killed": false,
+              "stalled": false
+            },
+            "EX": {
+              "id": "I1",
+              "pc": 0,
+              "text": "ADDI R1, R0, 9",
+              "killed": false,
+              "stalled": false
+            },
+            "MEM": null,
+            "WB": null
+          },
+          "events": [],
+          "reg_changes": [],
+          "alu": {
+            "instruction": "I1",
+            "op": "ADD",
+            "a": 0,
+            "b": 9,
+            "result": 9,
+            "zero": false,
+            "negative": false
+          },
+          "mem_access": null,
+          "registers": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cycle": 4,
+          "pc": 2,
+          "stages": {
+            "IF": null,
+            "ID": null,
+            "EX": {
+              "id": "I2",
+              "pc": 1,
+              "text": "HALT",
+              "killed": false,
+              "stalled": false
+            },
+            "MEM": {
+              "id": "I1",
+              "pc": 0,
+              "text": "ADDI R1, R0, 9",
+              "killed": false,
+              "stalled": false
+            },
+            "WB": null
+          },
+          "events": [],
+          "reg_changes": [],
+          "alu": null,
+          "mem_access": null,
+          "registers": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cycle": 5,
+          "pc": 2,
+          "stages": {
+            "IF": null,
+            "ID": null,
+            "EX": null,
+            "MEM": {
+              "id": "I2",
+              "pc": 1,
+              "text": "HALT",
+              "killed": false,
+              "stalled": false
+            },
+            "WB": {
+              "id": "I1",
+              "pc": 0,
+              "text": "ADDI R1, R0, 9",
+              "killed": false,
+              "stalled": false
+            }
+          },
+          "events": [
+            {
+              "type": "reg_write",
+              "message": "I1 writes R1 = 9"
+            }
+          ],
+          "reg_changes": [
+            {
+              "reg": 1,
+              "value": 9
+            }
+          ],
+          "alu": null,
+          "mem_access": null,
+          "registers": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "cycle": 6,
+          "pc": 2,
+          "stages": {
+            "IF": null,
+            "ID": null,
+            "EX": null,
+            "MEM": null,
+            "WB": {
+              "id": "I2",
+              "pc": 1,
+              "text": "HALT",
+              "killed": false,
+              "stalled": false
+            }
+          },
+          "events": [
+            {
+              "type": "halt",
+              "message": "I2 HALT retired"
+            }
+          ],
+          "reg_changes": [],
+          "alu": null,
+          "mem_access": null,
+          "registers": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "final_registers": [
+        0,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "final_memory": {}
+    }
+  },
+  "executions": [
+    {
+      "id": "f81180b0-ecd9-4e4a-b8a6-82c1ec946319",
+      "created_at": "2026-11-10T15:54:46.894737+00:00",
+      "status": "completed",
+      "duration_ms": 6.312,
+      "software_version": "1.0.0",
+      "replay_of": null,
+      "error": "",
+      "configuration": {
+        "program": "ADDI R1, R0, 9\nHALT",
+        "num_registers": 8,
+        "forwarding": true,
+        "max_cycles": 2000,
+        "memory_size_words": 256,
+        "clock_mhz": 100
+      },
+      "result": {
+        "data_source": "simulated",
+        "deterministic": true,
+        "status": "halted",
+        "fault": null,
+        "config": {
+          "num_registers": 8,
+          "forwarding": true,
+          "max_cycles": 2000,
+          "memory_size_words": 256,
+          "clock_mhz": 100
+        },
+        "instructions": [
+          {
+            "index": 0,
+            "text": "ADDI R1, R0, 9",
+            "line": 1
+          },
+          {
+            "index": 1,
+            "text": "HALT",
+            "line": 2
+          }
+        ],
+        "metrics": {
+          "cycles": 6,
+          "instructions_retired": 2,
+          "cpi": 3.0,
+          "ideal_cycles": 6,
+          "stall_cycles": 0,
+          "flush_events": 0,
+          "flushed_instructions": 0,
+          "forwarding_events": 0,
+          "branches": 0,
+          "branches_taken": 0,
+          "execution_time_us": 0.06
+        },
+        "cycles": [
+          {
+            "cycle": 1,
+            "pc": 1,
+            "stages": {
+              "IF": {
+                "id": "I1",
+                "pc": 0,
+                "text": "ADDI R1, R0, 9",
+                "killed": false,
+                "stalled": false
+              },
+              "ID": null,
+              "EX": null,
+              "MEM": null,
+              "WB": null
+            },
+            "events": [],
+            "reg_changes": [],
+            "alu": null,
+            "mem_access": null,
+            "registers": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "cycle": 2,
+            "pc": 2,
+            "stages": {
+              "IF": {
+                "id": "I2",
+                "pc": 1,
+                "text": "HALT",
+                "killed": false,
+                "stalled": false
+              },
+              "ID": {
+                "id": "I1",
+                "pc": 0,
+                "text": "ADDI R1, R0, 9",
+                "killed": false,
+                "stalled": false
+              },
+              "EX": null,
+              "MEM": null,
+              "WB": null
+            },
+            "events": [],
+            "reg_changes": [],
+            "alu": null,
+            "mem_access": null,
+            "registers": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "cycle": 3,
+            "pc": 2,
+            "stages": {
+              "IF": null,
+              "ID": {
+                "id": "I2",
+                "pc": 1,
+                "text": "HALT",
+                "killed": false,
+                "stalled": false
+              },
+              "EX": {
+                "id": "I1",
+                "pc": 0,
+                "text": "ADDI R1, R0, 9",
+                "killed": false,
+                "stalled": false
+              },
+              "MEM": null,
+              "WB": null
+            },
+            "events": [],
+            "reg_changes": [],
+            "alu": {
+              "instruction": "I1",
+              "op": "ADD",
+              "a": 0,
+              "b": 9,
+              "result": 9,
+              "zero": false,
+              "negative": false
+            },
+            "mem_access": null,
+            "registers": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "cycle": 4,
+            "pc": 2,
+            "stages": {
+              "IF": null,
+              "ID": null,
+              "EX": {
+                "id": "I2",
+                "pc": 1,
+                "text": "HALT",
+                "killed": false,
+                "stalled": false
+              },
+              "MEM": {
+                "id": "I1",
+                "pc": 0,
+                "text": "ADDI R1, R0, 9",
+                "killed": false,
+                "stalled": false
+              },
+              "WB": null
+            },
+            "events": [],
+            "reg_changes": [],
+            "alu": null,
+            "mem_access": null,
+            "registers": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "cycle": 5,
+            "pc": 2,
+            "stages": {
+              "IF": null,
+              "ID": null,
+              "EX": null,
+              "MEM": {
+                "id": "I2",
+                "pc": 1,
+                "text": "HALT",
+                "killed": false,
+                "stalled": false
+              },
+              "WB": {
+                "id": "I1",
+                "pc": 0,
+                "text": "ADDI R1, R0, 9",
+                "killed": false,
+                "stalled": false
+              }
+            },
+            "events": [
+              {
+                "type": "reg_write",
+                "message": "I1 writes R1 = 9"
+              }
+            ],
+            "reg_changes": [
+              {
+                "reg": 1,
+                "value": 9
+              }
+            ],
+            "alu": null,
+            "mem_access": null,
+            "registers": [
+              0,
+              9,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "cycle": 6,
+            "pc": 2,
+            "stages": {
+              "IF": null,
+              "ID": null,
+              "EX": null,
+              "MEM": null,
+              "WB": {
+                "id": "I2",
+                "pc": 1,
+                "text": "HALT",
+                "killed": false,
+                "stalled": false
+              }
+            },
+            "events": [
+              {
+                "type": "halt",
+                "message": "I2 HALT retired"
+              }
+            ],
+            "reg_changes": [],
+            "alu": null,
+            "mem_access": null,
+            "registers": [
+              0,
+              9,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "final_registers": [
+          0,
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "final_memory": {}
+      }
+    }
+  ],
+  "metrics": {
+    "data_source": "simulated",
+    "deterministic": true,
+    "status": "halted",
+    "fault": null,
+    "config.num_registers": 8,
+    "config.forwarding": true,
+    "config.max_cycles": 2000,
+    "config.memory_size_words": 256,
+    "config.clock_mhz": 100,
+    "metrics.cycles": 6,
+    "metrics.instructions_retired": 2,
+    "metrics.cpi": 3.0,
+    "metrics.ideal_cycles": 6,
+    "metrics.stall_cycles": 0,
+    "metrics.flush_events": 0,
+    "metrics.flushed_instructions": 0,
+    "metrics.forwarding_events": 0,
+    "metrics.branches": 0,
+    "metrics.branches_taken": 0,
+    "metrics.execution_time_us": 0.06
+  },
+  "sections": [
+    "executive_summary",
+    "background",
+    "methodology",
+    "configuration",
+    "results",
+    "discussion",
+    "conclusion"
+  ],
+  "detail_level": "technical",
+  "data_provenance": "Generated from persisted ARCHEX experiment and execution records. Simulation outputs are software-generated and are not physical hardware measurements.",
+  "report_id": "7805adeb-cdff-4d30-86da-e46947540f62",
+  "generated_at": "2026-11-10T15:54:46.955242+00:00"
+}

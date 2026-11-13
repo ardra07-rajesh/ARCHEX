@@ -1,0 +1,21 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+pydantic-settings>=2.2
+sqlalchemy>=2.0
+pytest>=8.0
+httpx>=0.27
+numpy>=1.26
+scikit-learn>=1.4
+joblib>=1.3
+# Optional: enables SHAP TreeExplainer values for the random-forest explanations.
+# Without it, explanations fall back to model-based occlusion attributions (clearly labelled in the UI).
+# shap>=0.45
+alembic>=1.13
+
+# Phase 9 PDF report rendering
+reportlab>=4.0
+# PostgreSQL production driver
+psycopg[binary]>=3.1
+
+# Phase 12 uses Python standard-library PBKDF2 and HMAC; no JWT/password package required.

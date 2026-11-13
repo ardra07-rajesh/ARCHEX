@@ -1,0 +1,41 @@
+{
+  "project": "ARCHEX — AI Microarchitecture Security & Research Command Centre",
+  "report_title": "Owned CPU — Research Report",
+  "experiment": {
+    "id": "b7f6afdd-fdd7-4cab-9989-0ad21026a3da",
+    "name": "Owned CPU",
+    "description": "",
+    "category": "microarchitecture",
+    "simulation": "cpu",
+    "status": "draft",
+    "version": 1,
+    "created_at": "2026-11-10T16:00:03.139333+00:00",
+    "updated_at": "2026-11-10T16:00:03.139333+00:00",
+    "configuration": {
+      "program": "HALT",
+      "num_registers": 8,
+      "forwarding": true,
+      "max_cycles": 100,
+      "memory_size_words": 64,
+      "clock_mhz": 100
+    },
+    "notes": "",
+    "tags": [],
+    "result": null
+  },
+  "executions": [],
+  "metrics": {},
+  "sections": [
+    "executive_summary",
+    "background",
+    "methodology",
+    "configuration",
+    "results",
+    "discussion",
+    "conclusion"
+  ],
+  "detail_level": "technical",
+  "data_provenance": "Generated from persisted ARCHEX experiment and execution records. Simulation outputs are software-generated and are not physical hardware measurements.",
+  "report_id": "b434b445-bfef-445d-8bd1-9a3da8bf1552",
+  "generated_at": "2026-11-10T16:00:03.155468+00:00"
+}

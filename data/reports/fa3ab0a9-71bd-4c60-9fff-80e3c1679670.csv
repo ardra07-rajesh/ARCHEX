@@ -1,0 +1,22 @@
+﻿record_type,experiment_id,experiment_name,simulation,metric,value,unit_or_context
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,data_source,simulated,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,deterministic,True,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,status,halted,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,fault,,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,config.num_registers,8,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,config.forwarding,True,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,config.max_cycles,2000,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,config.memory_size_words,256,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,config.clock_mhz,100,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.cycles,6,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.instructions_retired,2,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.cpi,3.0,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.ideal_cycles,6,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.stall_cycles,0,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.flush_events,0,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.flushed_instructions,0,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.forwarding_events,0,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.branches,0,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.branches_taken,0,simulation output; not physical hardware measurement
+experiment_metric,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,metrics.execution_time_us,0.06,simulation output; not physical hardware measurement
+execution,8b0d30b6-39d6-4d08-806a-0c048b206a6e,Phase 9 CPU report evidence,cpu,duration_ms,7.531,status=completed; execution_id=22756336-5128-441f-a432-8a5ebe9ce1d1
